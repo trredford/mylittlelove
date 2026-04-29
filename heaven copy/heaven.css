@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    background-color: #C1DFEA;
+    font-family: "Bricolage Grotesque", san-serif;
+
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    width: 100%;
+    position:fixed;
+    top: 0;
+    padding: 15px 0px;
+
+    z-index: 1000;
+    font-family: "Bricolage Grotesque", san -erif;
+  
+    }
+    
+    canvas {
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:9999;
+        pointer-events: none;
+    }
+.navbar a {
+        text-decoration: none;
+        color: #595656;
+        font-family: "Bricolage Grotesque", san-serif;
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    .sky {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .sky {
+        z-index: 1;
+    }
+
+    .cloud {
+        position: absolute;
+        width: 450px;
+        left: -400px;
+        opacity: 0.8;
+        animation: moveCloud linear infinite;
+    }
+
+    .cloud {
+        filter: blur(2px) brightness(1.1);
+    }
+
+
+        .c1 {top:5%; animation-duration: 55s; animation-delay: 0s; transform: scale (1.2); }
+        .c2 {top:12%; animation-duration: 65s; animation-delay: 10s; transform:scale(1.4)}
+        .c3 {top:40%; animation-duration: 32s; animation-delay: 15s; transform:scale(1.1)}
+        .c4 {top:60%; animation-duration: 70s; animation-delay: 5s; transform:scale(1.5)}
+        .c5 {top:75%; animation-duration: 28s; animation-delay: 25s; transform:scale(1.3)}
+        .c6 {top:85%; animation-duration: 72s; animation-delay: 40s; transform:scale(1.6)}
+
+    .cloud {
+        pointer-events: none;
+    }
+
+    @keyframes moveCloud {
+        from {left: -400px;}
+        to {left: 130vw;}
+    }
+
+     #angel {
+        position: fixed;
+        width: 420px;
+        left:35%;
+        top: 50%;
+        z-index: 9998;
+        pointer-events: none;
+
+
+
+
+
+    }
+
+    h1{
+        position: absolute;
+
+        top:50%;
+        left: 50%;
+        transform: translate (-50%, -50%);
+        font-size: 28px;
+        color: darkgray;
+        text-align: center;
+        max-width:600px;
+        line-height: 1.4;
+        z-index: 999;
+        opacity: 0;
+        animation: fineInText 6s forwards;
+
+    }
+    
+    

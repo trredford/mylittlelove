@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+     background-color: #A2A4CE;
+     font-family: "Bricolage Grotesque", san-serif;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    width: 100%;
+    position:fixed;
+    top: 0;
+    padding: 15px 0px;
+  
+    }
+    
+    
+.navbar a {
+        text-decoration: none;
+        color: black;
+        font-weight: 400;
+        font-size: 18px;
+        font-family: "Bricolage Grotesque";
+    }
+
+    .about-container {
+        max-width: 1000px;
+        margin: 5 auto;
+        padding: 10px;
+      }
+
+      .about-section {
+        display: flex;
+        align-items: center;
+        border-radius: 15px;
+        margin-bottom: 40px;
+        padding: 30px;
+        gap: 30px;
+      }
+      .about-text {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      .about-text h2 {
+        font-family: "Bricolage Grotesque";
+        font-size: 24pt;
+        margin-bottom: 60px; 
+        text-align: center;
+        margin: 0;
+        width :100%
+      }
