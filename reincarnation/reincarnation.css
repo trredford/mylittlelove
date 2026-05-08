@@ -1,6 +1,12 @@
-body {
+html, body {
     margin: 0;
     background-color: #79A7D1;
+    padding: 0;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
 }
 
 .navbar{
@@ -23,3 +29,22 @@ body {
         font-weight: regular;
         font-size: 18px;
     }
+
+#next-button{
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    background: none;
+    color: white;
+    text-decoration: none;
+    z-index: 9999;
+    transition: all 0.3s ease;
+  }
+  #next-button:hover {
+    transform: translateX(-50%) scale(1.2);
+    cursor: pointer;
+    opacity: 0.8;
+  }

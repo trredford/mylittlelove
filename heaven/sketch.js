@@ -1,5 +1,6 @@
 var font;
 var points = [];
+let letterSpacing= 40;
 
 function preload() {
   font = loadFont("HeavenText/Suba-Display.ttf");
@@ -10,25 +11,31 @@ function setup() {
   makeTextPoints();
 }
 function makeTextPoints() {
+  points = [];
    let fontSize= 80;
   
- let line1 = font.textToPoints(
-   "EITHER WAY", 120, height * 0.45, fontSize, {
-    sampleFactor: 0.45,
-    simplifyThreshold:0,
-   });
+  drawSpacedLine(
+   "EITHER W AY", 150, height * 0.45, fontSize);
   
-  let line2= font.textToPoints (
-    "I WILL SEE YOU AT EVERY", 120, height * 0.55, fontSize, {
-      sampleFactor :0.45,
-      simplifyThreshold:0,
-   });
-   let line3= font.textToPoints (
-    "BEGINNING AND EVERY END" , 120, height * 0.65, fontSize, {
-      sampleFactor :0.45,
-      simplifyThreshold:0,
-   });
-  points = line1.concat(line2,line3);
+  drawSpacedLine(
+    "I W ILL SEE YOU AT EVERY", 150, height * 0.55, fontSize);
+
+   drawSpacedLine(
+    "BEGINNING AND EVERY END" , 150, height * 0.65, fontSize);
+  
+}
+
+function drawSpacedLine(str, x, y, fontSize){
+  let currentX= x;
+  for (let i = 0; i <str.length; i++) {
+    let char = str[i];
+    let pts =font.textToPoints(char, currentX, y, fontSize,{
+      sampleFactor: 0.45,
+      simplifyThreshould: 0
+    });
+    points = points.concat(pts);
+    currentX += textWidth(char)+ letterSpacing;
+  }
 }
 
 function windowResized(){
@@ -46,7 +53,7 @@ function draw() {
   let angelY= angelBox.top + angelBox.height / 2;
 
   stroke(255);
-  strokeWeight (3);
+  strokeWeight (0.5);
   fill(255);
 
   points.forEach((point) => {
@@ -56,8 +63,8 @@ function draw() {
 
     let distortionAmount = 0
     
-    if (d <220) {
-      distortionAmount = map(d, 0, 220, 160, 0);
+    if (d <180) {
+      distortionAmount = map(d, 0, 160, 40, 0);
     }
      let distortion = distance.copy().setMag(distortionAmount);
 
