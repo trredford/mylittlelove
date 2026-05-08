@@ -50,7 +50,7 @@ function draw() {
     firsttext = constrain (firsttext,0, 255);
   }
     
-    textSize(58);
+    textSize(50);
     textAlign(CENTER,CENTER);
     fill(244, 248, 130, firsttext);
    
