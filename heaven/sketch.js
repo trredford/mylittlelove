@@ -15,13 +15,13 @@ function makeTextPoints() {
    let fontSize= 80;
   
   drawSpacedLine(
-   "EITHER W AY", 150, height * 0.45, fontSize);
+   "EITHER W AY", 70, height * 0.45, fontSize);
   
   drawSpacedLine(
-    "I W ILL SEE YOU AT EVERY", 150, height * 0.55, fontSize);
+    "I W ILL SEE YOU AT EVERY", 70, height * 0.55, fontSize);
 
    drawSpacedLine(
-    "BEGINNING AND EVERY END" , 150, height * 0.65, fontSize);
+    "BEGINNING AND EVERY END" , 70, height * 0.65, fontSize);
   
 }
 
