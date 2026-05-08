@@ -2,6 +2,12 @@ body {
     margin: 0;
     background-color: #C1DFEA;
     font-family: "Bricolage Grotesque", san-serif;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    color: #595656;
+    
 
 }
 
