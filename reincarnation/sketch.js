@@ -44,9 +44,9 @@ function draw() {
   textFont(font);
   textAlign (CENTER,CENTER);
   
-  if (elapsed < 7000){
-  if (elapsed > 5000){
-    firsttext = map(elapsed, 5000, 7000,255, 0);
+  if (elapsed < 12000){
+  if (elapsed > 10000){
+    firsttext = map(elapsed, 10000, 12000,255, 0);
     firsttext = constrain (firsttext,0, 255);
   }
     
@@ -54,9 +54,9 @@ function draw() {
     textAlign(CENTER,CENTER);
     fill(244, 248, 130, firsttext);
    
-  text("MAYBE WE'LL BE YOUR FAVORITE FISH IN OUR NEXT LIFE  ", centerX, 225);
+  text("MAYBE WE WILL BE YOUR FAVORITE FISH IN OUR NEXT LIFE  ", centerX, 225);
   text("UNBURDENED BY CONCEPTS OF LIFE AND DEATH", centerX, 325)
-  text(" OR MAYBE, IN THE NEXT LIFE YOU'll BE MY MOTHER.", centerX, 425);  
+  text(" OR MAYBE, IN THE NEXT LIFE YOU WILL BE MY MOTHER.", centerX, 425);  
 }
   
   else {

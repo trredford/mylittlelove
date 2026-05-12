@@ -14,14 +14,27 @@ function makeTextPoints() {
   points = [];
    let fontSize= 75;
   
-  drawSpacedLine(
-   "EITHER W AY", 20, height * 0.45, fontSize);
   
-  drawSpacedLine(
-    "I W ILL SEE YOU AT EVERY", 20, height * 0.55, fontSize);
+   let line1 = "EITHER W AY";
+  
+  let line2 =
+    "I W ILL SEE YOU AT EVERY";
 
-   drawSpacedLine(
-    "BEGINNING AND EVERY END" , 20, height * 0.65, fontSize);
+   let line3 =
+    "BEGINNING AND EVERY END";
+
+    let line1Width =textWidth(line1)+(line1.length * letterSpacing);
+    let line2Width =textWidth(line2)+(line2.length * letterSpacing);
+    let line3Width =textWidth(line3)+(line3.length * letterSpacing);
+
+    drawSpacedLine(line1, width / 2 -line1Width / 2, height * 0.40,
+      fontSize);
+
+      drawSpacedLine(line2, width / 2 -line2Width / 2, height * 0.50,
+        fontSize);
+
+        drawSpacedLine(line3, width / 2 -line3Width / 2, height * 0.60,
+          fontSize);
   
 }
 
@@ -30,7 +43,7 @@ function drawSpacedLine(str, x, y, fontSize){
   for (let i = 0; i <str.length; i++) {
     let char = str[i];
     let pts =font.textToPoints(char, currentX, y, fontSize,{
-      sampleFactor: 0.45,
+      sampleFactor: 0.7,
       simplifyThreshould: 0
     });
     points = points.concat(pts);
@@ -63,12 +76,12 @@ function draw() {
 
     let distortionAmount = 0
     
-    if (d <180) {
-      distortionAmount = map(d, 0, 160, 40, 0);
+    if (d <260) {
+      distortionAmount = map(d, 0, 260, 40, 0);
     }
      let distortion = distance.copy().setMag(distortionAmount);
 
-    circle(point.x + distortion.x, point.y + distortion.y, 8);
+    circle(point.x + distortion.x, point.y + distortion.y, 11);
   });
 }
 

@@ -21,43 +21,64 @@ function setup() {
  function makeText(){
    points = [];
    b = [];
- }  
+   
 let fontSize = 70;
-  let x = 40;
-  
-  let line1 = font.textToPoints (
-  "WHEN IT'S ALL OVER JUST KNOW",
-    x, height*0.35, fontSize, 
-    {
-    sampleFactor: 0.12, simplifyThreshold: 0,
-    }
-  );
-  let line2 = font.textToPoints (
-  "I'LL SEE YOU AGAIN MY LITTLE LOVE",
-  x, height * 0.50, fontSize, 
-    {
-    sampleFactor: 0.12, simplifyThreshold: 0,
-    });
 
-let line3 = font.textToPoints(
-  "IN WHATEVER HAPPENS NEXT",
-    x, height * 0.65, fontSize, 
+let line1Text= "WHEN IT IS ALL OVER JUST KNOW";
+let line2Text= "I WILL SEE YOU AGAIN MY LITTLE LOVE";
+let line3Text= "IN WHATEVER HAPPENS NEXT";
+let line4Text= "I WILL FIND YOU";
+
+let startY =height/2-70;
+let spacing = 70;
+
+
+let line1Bounds = font.textBounds (line1Text, 0, 0, fontSize);
+let line2Bounds = font.textBounds (line2Text, 0, 0, fontSize);
+let line3Bounds = font.textBounds (line3Text, 0, 0, fontSize);
+let line4Bounds = font.textBounds (line4Text, 0, 0, fontSize);
+
+
+let line1ShiftLeft = 1
+let line2ShiftLeft = 272;
+let line3ShiftLeft = 1;
+let line4ShiftLeft = 1;
+
+let line1X =width/2 - line1Bounds.w/2- line1ShiftLeft;
+let line2X =width/2 - line2Bounds.w/2- line2ShiftLeft;
+let line3X =width/2 - line3Bounds.w/2- line3ShiftLeft;
+let line4X =width/2 - line4Bounds.w/2-  line4ShiftLeft;
+
+
+
+let line1 = font.textToPoints 
+(line1Text, line1X, startY, fontSize,
+  {
+  sampleFactor: 0.12, simplifyThreshold: 0
+  });
+  let line2 = font.textToPoints 
+  (line2Text, line2X, startY+ spacing, fontSize,
+  {
+  sampleFactor: 0.12, simplifyThreshold: 0
+  });
+  let line3 = font.textToPoints 
+  (line3Text, line3X, startY+ spacing * 2, fontSize,
     {
-    sampleFactor: 0.12, simplifyThreshold: 0,
+    sampleFactor: 0.12, simplifyThreshold: 0
     });
+    let line4 = font.textToPoints 
+    (line4Text, line4X, startY+ spacing * 3, fontSize,
+      {
+      sampleFactor: 0.12, simplifyThreshold: 0
+      });
+
   
-  let line4 = font.textToPoints(
-  "I'LL FIND YOU",
-    x, height * 0.80, fontSize, 
-    {
-    sampleFactor: 0.12, simplifyThreshold: 0,
-    });
-  
-  points = line1.concat(line2,line3, line4);
+  points = line1.concat(line2,line3,line4);
 
   for (let i= 0; i < points.length; i++) {
-    b [i] = new Star (points [i].x, points [i].y);
+    b [i] = new Star(points[i].x, points [i].y);
   }
+}
 }
 
 function windowResized() {
@@ -69,7 +90,7 @@ function draw() {
   image (galaxy, 0, 0, width, height);
   let anyStarScattered = false;
   
-  starLight -= 2;
+
   
   let touchedText= false;
   for( let i = 0; i < b.length; i++){
@@ -82,17 +103,19 @@ function draw() {
   }
     
   starLight = max(starLight,0);
-  fill (255, starLight);
+  fill (255, 127);
   noStroke();
   textFont(font)
   textSize(70)
+  textAlign(CENTER);
   
-  let centerY = height / 2 ;
+  let startY = height / 2-70;
+  let spacing =70;
   
-  text("WHEN IT'S ALL OVER JUST KNOW", 40, height * 0.35);
-  text("I'LL SEE YOU AGAIN MY LITTLE LOVE", 40, height * 0.50);
-  text("IN WHATEVER HAPPENS NEXT", 40, height * 0.65);
-  text("I'LL FIND YOU", 40, height * 0.80);
+  text("WHEN IT IS ALL OVER JUST KNOW", width/2, startY);
+  text("I WILL SEE YOU AGAIN MY LITTLE LOVE", width/2, startY + spacing);
+  text("IN WHATEVER HAPPENS NEXT", width/2, startY+spacing * 2);
+  text("I WILL FIND YOU", width/2, startY + spacing * 3);
   
   
   for (let i = 0; i < b.length; i++) {
