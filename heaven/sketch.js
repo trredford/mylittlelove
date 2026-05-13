@@ -1,3 +1,8 @@
+
+// inspired by on maddireyes TabiTabPO
+// I utilized chat gpt to fix coding errors like stray brackets
+// I utilized Chat GPT to help me get the text to be a little bit more clear looking in my design
+
 var font;
 var points = [];
 let letterSpacing= 40;

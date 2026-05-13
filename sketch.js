@@ -1,5 +1,7 @@
 // based on maddireyes FINALPO 
-
+// tried to ask Chat to help me calculate some of my coding to change it's original position to center aligned after the 2 layers of text weren't lining up
+// that was a failure, I had to calculate through trial and error to shift the different lines of text on the star text layer to the left by specific amounts
+// Asked chat GPT how to ensure by stars stopped clustering in a left angle on the page and around the text
 
 let galaxy;
 var font;
@@ -22,32 +24,32 @@ function setup() {
    points = [];
    b = [];
    
-let fontSize = 70;
+      let fontSize = 70;
 
-let line1Text= "WHEN IT IS ALL OVER JUST KNOW";
-let line2Text= "I WILL SEE YOU AGAIN MY LITTLE LOVE";
-let line3Text= "IN WHATEVER HAPPENS NEXT";
-let line4Text= "I WILL FIND YOU";
+      let line1Text= "WHEN IT IS ALL OVER JUST KNOW";
+      let line2Text= "I WILL SEE YOU AGAIN MY LITTLE LOVE";
+      let line3Text= "IN WHATEVER HAPPENS NEXT";
+      let line4Text= "I WILL FIND YOU";
 
-let startY =height/2-70;
-let spacing = 70;
-
-
-let line1Bounds = font.textBounds (line1Text, 0, 0, fontSize);
-let line2Bounds = font.textBounds (line2Text, 0, 0, fontSize);
-let line3Bounds = font.textBounds (line3Text, 0, 0, fontSize);
-let line4Bounds = font.textBounds (line4Text, 0, 0, fontSize);
+      let startY =height/2-70;
+      let spacing = 70;
 
 
-let line1ShiftLeft = 1
-let line2ShiftLeft = 272;
-let line3ShiftLeft = 1;
-let line4ShiftLeft = 1;
+      let line1Bounds = font.textBounds (line1Text, 0, 0, fontSize);
+      let line2Bounds = font.textBounds (line2Text, 0, 0, fontSize);
+      let line3Bounds = font.textBounds (line3Text, 0, 0, fontSize);
+      let line4Bounds = font.textBounds (line4Text, 0, 0, fontSize);
 
-let line1X =width/2 - line1Bounds.w/2- line1ShiftLeft;
-let line2X =width/2 - line2Bounds.w/2- line2ShiftLeft;
-let line3X =width/2 - line3Bounds.w/2- line3ShiftLeft;
-let line4X =width/2 - line4Bounds.w/2-  line4ShiftLeft;
+
+      let line1ShiftLeft = 1
+      let line2ShiftLeft = 272;
+      let line3ShiftLeft = 1;
+      let line4ShiftLeft = 1;
+
+      let line1X =width/2 - line1Bounds.w/2- line1ShiftLeft;
+      let line2X =width/2 - line2Bounds.w/2- line2ShiftLeft;
+      let line3X =width/2 - line3Bounds.w/2- line3ShiftLeft;
+      let line4X =width/2 - line4Bounds.w/2-  line4ShiftLeft;
 
 
 
@@ -75,10 +77,10 @@ let line1 = font.textToPoints
   
   points = line1.concat(line2,line3,line4);
 
-  for (let i= 0; i < points.length; i++) {
-    b [i] = new Star(points[i].x, points [i].y);
+    for (let i= 0; i < points.length; i++) {
+       b [i] = new Star(points[i].x, points [i].y);
+    }
   }
-}
 }
 
 function windowResized() {

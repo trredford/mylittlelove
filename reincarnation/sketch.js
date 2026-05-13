@@ -1,3 +1,6 @@
+ //Asked chat how to make the purple tone to stop popping up after the user clicks on the animal, it didn't end up working. As longer as the user doesn't accidently highlight when clicking it stays blue.
+ 
+ 
  var font;
 let selectedAnimal = null;
 let reincarnated = false;
@@ -54,9 +57,9 @@ function draw() {
     textAlign(CENTER,CENTER);
     fill(244, 248, 130, firsttext);
    
-  text("MAYBE WE WILL BE YOUR FAVORITE FISH IN OUR NEXT LIFE  ", centerX, 225);
-  text("UNBURDENED BY CONCEPTS OF LIFE AND DEATH", centerX, 325)
-  text(" OR MAYBE, IN THE NEXT LIFE YOU WILL BE MY MOTHER.", centerX, 425);  
+      text("MAYBE WE WILL BE YOUR FAVORITE FISH IN OUR NEXT LIFE  ", centerX, 225);
+      text("UNBURDENED BY CONCEPTS OF LIFE AND DEATH", centerX, 325)
+      text(" OR MAYBE, IN THE NEXT LIFE YOU WILL BE MY MOTHER.", centerX, 425);  
 }
   
   else {
